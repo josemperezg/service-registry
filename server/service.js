@@ -1,7 +1,6 @@
 const express = require('express');
 
 const service = express();
-// const ServiceRegistry = require('./ServiceRegistry');
 
 module.exports = (config) => {
   const log = config.log();
@@ -12,6 +11,18 @@ module.exports = (config) => {
       return next();
     });
   }
+
+  service.put('/register/:servicename/:serviceversion/:serviceport', (req, res, next) => {
+    return next('Not implemented');
+  });
+
+  service.delete('/register/:servicename/:serviceversion/:serviceport', (req, res, next) => {
+    return next('Not implemented');
+  });
+
+  service.get('/find/:servicename/:serviceversion', (req, res, next) => {
+    return next('Not implemented');
+  });
 
   // eslint-disable-next-line no-unused-vars
   service.use((error, req, res, next) => {
